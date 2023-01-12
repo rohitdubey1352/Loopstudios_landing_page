@@ -1,0 +1,496 @@
+@import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Akshar:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+h1, h2, h3{
+    color: #fff;
+}
+
+
+.main{
+    position: relative;
+    width: 100%;
+    height: 90vh;
+    background: url(images/desktop/image-hero.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 2.6rem 10rem;
+    margin-bottom: 10vh;
+    /* font-family: 'Alata', 'Josefin Sans'; */
+}
+
+.main::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.3);
+    
+}
+
+.navbar{
+    position: relative;
+    color: #fff;
+}
+
+.logo h2{ 
+    font-family: 'Alata';
+    font-style: normal;
+    font-weight: 500;
+    letter-spacing: .02rem;
+    /* font-weight: 700; */
+    color: #fff;
+}
+.nav_list{
+    position: relative;
+}
+
+.nav_list ul{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+}
+
+.nav_list li{
+    margin: 0 1.2rem;
+}
+
+.nav_list a{
+    width: 100%;
+    font-family: 'Alata';
+    font-style: normal;
+    font-weight: 500;
+    letter-spacing: .02rem;
+    color: #fff;
+    transition: all 0.1s ease-in-out;
+}
+
+.nav_list a:hover{
+    border-bottom: 2px solid #fff;
+    padding-bottom: .2rem;
+    
+}
+
+.main .hero h1{
+    position: relative;
+}
+
+.main .hero h1{
+    width: 60%;
+    margin-top: 10%;
+    text-transform: uppercase;
+    padding: 2rem;
+    font-size: 4rem;
+    line-height: 4rem;
+    letter-spacing: .8rem;
+    text-align: left;
+    border: .2rem solid rgb(255, 255, 255);
+    font-family: 'Josefin Sans';
+}
+
+/* Hero start */
+
+.hero_sec{
+    position: relative;
+    margin: 5rem 0;
+    padding: 0 10rem;
+}
+
+.hero_sec img{
+    position: relative;
+    width: 50vw;
+    height: 70vh;
+}
+
+.hero_sec .hero_box{
+    position: relative;
+    width: 570px;
+    height: 325px;
+    background: #fff;
+    margin-bottom: -1rem;
+    padding: 3.2rem 1rem 0 5.8rem;
+    margin-top: auto;
+    display: flex;
+    justify-content: end;
+    align-items: flex-end;
+    flex-direction: column;
+
+}
+
+.hero_sec .hero_box h1{
+    color: #282828;
+    text-transform: uppercase;
+    padding: 1.2rem 0;
+    font-size: 2.6rem;
+    line-height: 2.8rem;
+    font-weight: 500;
+    letter-spacing: .25rem;
+    text-align: left;
+    font-family: 'Josefin Sans';
+}
+
+.hero_box p{
+    color: hsl(0, 0%, 55%);
+}
+
+
+/* Hero end */
+
+/* creations start */
+.creations_top{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 3.2rem;
+}
+
+.creations_top h1{
+    position: relative;
+    color: hsl(0, 0%, 0%);
+    text-transform: uppercase;
+    padding: 1.2rem 0;
+    font-size: 3rem;
+    line-height: 2.8rem;
+    font-weight: 500;
+    letter-spacing: .25rem;
+    text-align: center;
+    font-family: 'Josefin Sans';
+}
+
+
+.creations_top .btn{
+    border: 1.6px solid hsl(0, 0%, 0%);
+    border-radius: 0;
+    width: 15%;
+    font-family: 'Alata';
+    font-weight: 400;
+    letter-spacing: .15rem;
+    background: transparent;
+}
+.creations_top .btn:hover{
+    background: #000;
+    color: #fff;
+}
+
+.img_group{
+    position: relative;
+    padding: 0 1rem 0 3rem;
+}
+
+.box:hover{
+    opacity: 0.4;
+    
+}
+.box{
+    position: relative;
+    width: 258px;
+    height: 454px;
+    background: url(images/desktop/image-deep-earth.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 1rem 1.6rem;
+    box-shadow: 0px -40px 50px 0px rgba(0,0,0,0.80) inset;
+    -webkit-box-shadow: 0px -40px 50px 0px rgba(0,0,0,0.80) inset;
+    -moz-box-shadow: 0px -40px 50px 0px rgba(0,0,0,0.80) inset;
+
+    /* margin-top: 2rem; */
+}.box:nth-child(2){
+    background: url(images/desktop/image-night-arcade.jpg);
+}.box:nth-child(3){
+    background: url(images/desktop/image-soccer-team.jpg);
+}.box:nth-child(4){
+    background: url(images/desktop/image-grid.jpg);
+}.box:nth-child(5){
+    background: url(images/desktop/image-from-above.jpg);
+}.box:nth-child(6){
+    background: url(images/desktop/image-pocket-borealis.jpg);
+}.box:nth-child(7){
+    background: url(images/desktop/image-curiosity.jpg);
+}.box:nth-child(8){
+    background: url(images/desktop/image-fisheye.jpg);
+}
+.box h1{
+    position: absolute;
+    color: #fff;
+    bottom: 1.4rem;
+    left: 3rem;
+    text-transform: uppercase;
+    line-height: 2.8rem;
+    font-weight: 500;
+    font-family: 'Josefin Sans';
+}
+
+/* creations end */
+
+
+/* footer start */
+.footer{
+    position: relative;
+    width: 100%;
+    height: 25vh;
+    padding: 3rem 9rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    background: #000;
+}
+
+
+.footer .right p{
+    font-weight: 500;
+    text-align: right;
+    color: hsl(0, 0%, 55%);
+}
+
+.footer ul{
+    display: flex;
+    padding-left: 0;
+}
+
+.footer li{
+    margin: 2rem 1rem 0 0;
+}
+
+
+.footer a{
+    font-family: 'Alata';
+    font-style: normal;
+    font-weight: 500;
+    letter-spacing: .02rem;
+    color: #fff;
+}
+
+.footer a:hover{
+    border-bottom: 2px solid #fff;
+    padding-bottom: .4rem;
+    
+}
+.social_media{
+    position: relative;
+    text-align: right;
+    margin-top: .4rem;
+    margin-bottom: 2.2rem;
+}
+
+.social_media img{
+    margin: 0 .4rem;
+}
+
+.social_media a:hover{
+    padding-bottom: .6rem;
+    border-bottom: 2px solid #fff;
+}
+
+/* footer end */
+
+
+@media screen and (max-width: 786px) {
+    .main{
+        padding: 2rem;
+        background: url(images/mobile/image-hero.jpg);
+        background-size: cover;
+    }
+    
+    .main::before{
+        display: none;
+    }
+
+    .main .hero h1{
+        width: 100%;
+        line-height: 2.6rem;
+        font-size: 2.4rem;
+        letter-spacing: .15rem;
+        word-spacing: 5rem;
+        padding: 1.2rem;
+        margin-top: 30%;
+    }
+ 
+    .hero_sec{
+        padding: 0;
+    }
+    
+     .hero_sec img{
+        width: 100%;
+        height: 35vh;
+        padding: 0 1rem;
+    }
+    
+    .hero_sec .hero_box{
+        position: relative;
+        width: 570px;
+        height: 325px;
+        padding: 0;
+        margin-top: 4rem;
+    }
+    
+    .hero_sec .hero_box h1, p{
+        padding: 1.2rem 0;
+        text-align: center;
+        font-family: 'Josefin Sans';
+    }
+    
+    .hero_box p{
+        font-size: 1.2rem;
+        padding: 0 5rem;
+        line-height: 1.6rem;
+        font-weight: bold;
+    }
+    .creations_top{
+        flex-direction: column;
+        padding: 0;
+    }
+    .creations_top .btn{
+        width: 34%;
+    }
+
+    .img_group{
+        padding: 1rem;
+    }
+
+    .box{
+        position: relative;
+        width: 416px;
+        height: 152px;
+        background: url(images/mobile/image-deep-earth.jpg);
+        background-position: 100% 100%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        margin: auto;
+        margin: 1rem 0;
+    }.box:nth-child(2){
+        background: url(images/mobile/image-night-arcade.jpg);
+    }.box:nth-child(3){
+        background: url(images/mobile/image-soccer-team.jpg);
+    }.box:nth-child(4){
+        background: url(images/mobile/image-grid.jpg);
+    }.box:nth-child(5){
+        background: url(images/mobile/image-from-above.jpg);
+    }.box:nth-child(6){
+        background: url(images/mobile/image-pocket-borealis.jpg);
+    }.box:nth-child(7){
+        background: url(images/mobile/image-curiosity.jpg);
+    }.box:nth-child(8){
+        background: url(images/mobile/image-fisheye.jpg);
+    }
+
+    .box h1{
+        bottom: .6rem;
+        left: 1.2rem;
+    }
+
+    .creations_top h1{
+        font-size: 2.4rem;
+    }
+    .creations_top .btn{
+        position: absolute;
+        top: 102rem;
+    }
+    
+    
+    .footer{
+        height: 100%;
+        padding: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .footer .logo h2{
+        font-size: 2rem;
+        text-align: center;
+    }
+     
+    .footer .right p{
+        text-align: center;
+        letter-spacing: 1.4px;
+        font-weight: 700;
+    }
+    
+    .footer ul{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding-left: 0;
+    } 
+    
+    .footer li{
+        margin: 2rem 1rem 0 0;
+    }
+    
+    .social_media{
+        position: relative;
+        text-align: center;
+        margin-top: 3rem;
+    }
+    
+    .social_media img{
+        margin: 0 .4rem;
+    } 
+
+    .main{
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        background: #000;
+    }
+    .hero{
+        display: none;
+    }
+    .active .open_icon{
+        display: none;
+    }
+
+    .nav_list ul{
+        position: absolute;
+        display: flex;
+        justify-content: start;
+        align-items: flex-start;
+        flex-direction: column;
+        padding-top: 10rem;
+        right: 6rem;
+    }
+   
+    .nav_list li{
+        margin: .6rem 0;
+    }
+    
+    .nav_list a{
+        text-transform: uppercase;
+        font-size: 1.6rem;
+        font-family: 'Josefin Sans';
+        font-weight: 100;
+        transition: all 0.1s ease-in-out;
+        } 
+}
+
+@media screen and (min-width: 787px) {
+    .toggle img{
+        display: none;
+    }
+    .toggle{
+        display: none;
+    }
+}
