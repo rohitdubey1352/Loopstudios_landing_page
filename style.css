@@ -1,10 +1,30 @@
-@import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Akshar:wght@300;400;500;600;700&display=swap');
+
+@font-face {
+    font-family: "Alata-Regular";
+    src: url("fonts/Alata-Regular.ttf");
+}
+
+@font-face {
+    font-family: "JosefinSans-Light";
+    src: url("fonts/JosefinSans-Light.ttf");
+}
 
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-size: 15px;
+    line-height: 1.5;
+    overflow-x: hidden;
 }
 
 
@@ -21,91 +41,176 @@ h1, h2, h3{
 }
 
 
-.main{
+.main-header{
     position: relative;
     width: 100%;
+    max-height: 41.25rem;
     height: 90vh;
     background: url(images/desktop/image-hero.jpg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     padding: 2.6rem 10rem;
-    margin-bottom: 10vh;
-    /* font-family: 'Alata', 'Josefin Sans'; */
+    margin-bottom: 5rem;
 }
 
-.main::before{
+.visually-hidden {
+    clip: rect(0 0 0 0); 
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap; 
+    width: 1px;
+}
+
+.main-header .container {
+    --max-width: 1150px;
+    --padding: 1.5rem;
+
+    width: min(var(--max-width), calc(100% - var(--padding)*2));
+    margin-inline: auto;
+}
+
+@media (max-width: 400px) {
+    .main-header .container {
+        padding: 1rem;
+    }
+}
+
+.underline {
+    position: relative;
+    display: inline-block;
+}
+
+.underline::after{
     content: '';
     position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: rgba(0, 0, 0, 0.3);
-    
+    width: 0%;
+    height: 2px;
+    bottom: -25%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #fff;
+    transition: width 300ms ease-in-out;
 }
 
-.navbar{
-    position: relative;
-    color: #fff;
+.underline:is(:hover, :focus-visible)::after {
+    width: 100%;
 }
 
-.logo h2{ 
-    font-family: 'Alata';
-    font-style: normal;
-    font-weight: 500;
-    letter-spacing: .02rem;
-    /* font-weight: 700; */
-    color: #fff;
-}
-.nav_list{
-    position: relative;
-}
-
-.nav_list ul{
-    position: relative;
+.navigation-bar {
     display: flex;
+    gap: 2rem;
     justify-content: space-between;
     align-items: center;
-    margin: auto;
+    padding-top: 1rem;
+    padding-bottom: 8.5rem;
 }
 
-.nav_list li{
-    margin: 0 1.2rem;
+
+@media (max-width: 799px) {
+    #main-navigation {
+        position: absolute;
+        text-transform: uppercase;
+        background-color: black;
+        inset: 0;
+        padding: clamp(12rem,35vh, 15rem) 1.5rem;
+        font-size: 1.5rem;
+        height: 82vh;
+        font-family: "JosefinSans-Light";
+        transform: translateX(-100%);
+        transition: transform 300ms ease-in-out;
+    }
+    
+    .nav-list >*:not(:last-child) {
+        margin-bottom: .75em;
+    }
+
+    #main-navigation[data-visible="true"] {
+        transform: translateX(0%);
+    }
 }
 
-.nav_list a{
-    width: 100%;
-    font-family: 'Alata';
+.home-logo {
+    position: relative;
+    z-index: 99;
+}
+
+.mobile-trigger {
+    --width: 2.25rem;
+
+    position: relative;
+    z-index: 99;
+    width: var(--width);
+    aspect-ratio: 1;
+    background: url("images/icon-hamburger.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    background-size: var(--width);
+    transition: background-image 300ms ease-in-out;
+}
+
+.mobile-trigger[aria-expanded="true"] {
+    background-image: url("images/icon-close.svg");
+}
+
+@media (min-width: 50em) {
+
+    .nav-list {
+        display: flex;
+        gap: 2.25rem;
+        align-items: center;
+    }
+
+    .mobile-trigger {
+        display: none;
+    }
+}
+
+.nav-list a {
+    font-family: "Alata-Regular";
     font-style: normal;
     font-weight: 500;
     letter-spacing: .02rem;
     color: #fff;
-    transition: all 0.1s ease-in-out;
 }
 
-.nav_list a:hover{
-    border-bottom: 2px solid #fff;
-    padding-bottom: .2rem;
+
+.main-heading {
+    margin-top: -2rem;
+    padding: 3em min(3em, 4vw) 2.5em;
     
 }
 
-.main .hero h1{
-    position: relative;
-}
-
-.main .hero h1{
-    width: 60%;
-    margin-top: 10%;
-    text-transform: uppercase;
+.main-title{
+    width: 700px;
     padding: 2rem;
-    font-size: 4rem;
-    line-height: 4rem;
+    line-height: 4.4rem;
     letter-spacing: .8rem;
     text-align: left;
     border: .2rem solid rgb(255, 255, 255);
-    font-family: 'Josefin Sans';
+    font-family: 'JosefinSans-Light';
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 4rem;
 }
+
+@media (min-width: 599px) {
+    .main-heading {
+        max-width: 80%;
+        padding: min(3em, 5vw) min(3em, 5vw) min(1.75em, 4vw);
+    }
+}
+
+@media (min-width: 50em) {
+    .main-heading {
+        max-width: 59%;
+    }
+    
+}
+
 
 /* Hero start */
 
@@ -145,7 +250,7 @@ h1, h2, h3{
     font-weight: 500;
     letter-spacing: .25rem;
     text-align: left;
-    font-family: 'Josefin Sans';
+    font-family: "JosefinSans-Light";
 }
 
 .hero_box p{
@@ -174,7 +279,7 @@ h1, h2, h3{
     font-weight: 500;
     letter-spacing: .25rem;
     text-align: center;
-    font-family: 'Josefin Sans';
+    font-family: "JosefinSans-Light";
 }
 
 
@@ -182,7 +287,7 @@ h1, h2, h3{
     border: 1.6px solid hsl(0, 0%, 0%);
     border-radius: 0;
     width: 15%;
-    font-family: 'Alata';
+    font-family: "Alata-Regular";
     font-weight: 400;
     letter-spacing: .15rem;
     background: transparent;
@@ -199,7 +304,6 @@ h1, h2, h3{
 
 .box:hover{
     opacity: 0.4;
-    
 }
 .box{
     position: relative;
@@ -214,7 +318,6 @@ h1, h2, h3{
     -webkit-box-shadow: 0px -40px 50px 0px rgba(0,0,0,0.80) inset;
     -moz-box-shadow: 0px -40px 50px 0px rgba(0,0,0,0.80) inset;
 
-    /* margin-top: 2rem; */
 }.box:nth-child(2){
     background: url(images/desktop/image-night-arcade.jpg);
 }.box:nth-child(3){
@@ -238,7 +341,7 @@ h1, h2, h3{
     text-transform: uppercase;
     line-height: 2.8rem;
     font-weight: 500;
-    font-family: 'Josefin Sans';
+    font-family: "JosefinSans-Light";
 }
 
 /* creations end */
@@ -275,18 +378,13 @@ h1, h2, h3{
 
 
 .footer a{
-    font-family: 'Alata';
+    font-family: "Alata-Regular";
     font-style: normal;
     font-weight: 500;
     letter-spacing: .02rem;
     color: #fff;
 }
 
-.footer a:hover{
-    border-bottom: 2px solid #fff;
-    padding-bottom: .4rem;
-    
-}
 .social_media{
     position: relative;
     text-align: right;
@@ -298,65 +396,82 @@ h1, h2, h3{
     margin: 0 .4rem;
 }
 
-.social_media a:hover{
-    padding-bottom: .6rem;
-    border-bottom: 2px solid #fff;
-}
-
 /* footer end */
 
-
-@media screen and (max-width: 786px) {
-    .main{
-        padding: 2rem;
-        background: url(images/mobile/image-hero.jpg);
-        background-size: cover;
-    }
-    
-    .main::before{
-        display: none;
-    }
-
-    .main .hero h1{
-        width: 100%;
-        line-height: 2.6rem;
-        font-size: 2.4rem;
-        letter-spacing: .15rem;
-        word-spacing: 5rem;
-        padding: 1.2rem;
-        margin-top: 30%;
-    }
- 
+@media screen and (min-width: 787px) {
     .hero_sec{
-        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin: auto;
+        padding: auto;
     }
     
      .hero_sec img{
         width: 100%;
-        height: 35vh;
-        padding: 0 1rem;
+        height: 28rem;
+        padding: 0;
     }
     
     .hero_sec .hero_box{
         position: relative;
         width: 570px;
         height: 325px;
+        margin-left: -8rem;
+        padding: 3.2rem 1rem 0 5.8rem;
+        margin-top: 10rem;
+    }
+}
+
+@media screen and (max-width: 786px) {
+    .main-header{
+        padding: 2rem;
+        background: url(images/mobile/image-hero.jpg);
+        background-size: cover;
+    }
+    
+    .main-header::before{
+        display: none;
+    }
+    .main-heading {
+        margin-top: 2rem;
         padding: 0;
-        margin-top: 4rem;
+    }
+    .main-heading .main-title{
+        width: 100%;
+        line-height: 2.6rem;
+        font-size: 1.7rem;
+        letter-spacing: .15rem;
+        word-spacing: 5rem;
+    }
+    .hero_sec{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 0;
     }
     
-    .hero_sec .hero_box h1, p{
-        padding: 1.2rem 0;
+    .hero_sec img {
+        position: relative;
+        width: 100%;
+        height: auto;
+        margin-bottom: 5rem;
+    }
+    
+    .hero_sec .hero_box{
+        position: relative;
+        width: 570px;
+        height: 325px;
         text-align: center;
-        font-family: 'Josefin Sans';
+        padding: 1rem;
     }
-    
-    .hero_box p{
-        font-size: 1.2rem;
-        padding: 0 5rem;
-        line-height: 1.6rem;
-        font-weight: bold;
+    .hero_sec .hero_box h1{
+        text-align: center;
     }
+
+
     .creations_top{
         flex-direction: column;
         padding: 0;
@@ -377,7 +492,6 @@ h1, h2, h3{
         background-position: 100% 100%;
         background-size: cover;
         background-repeat: no-repeat;
-        margin: auto;
         margin: 1rem 0;
     }.box:nth-child(2){
         background: url(images/mobile/image-night-arcade.jpg);
@@ -417,8 +531,8 @@ h1, h2, h3{
         align-items: center;
         flex-direction: column;
     }
-    .footer .logo h2{
-        font-size: 2rem;
+    .footer .links{
+        font-size: 1.6rem;
         text-align: center;
     }
      
@@ -438,6 +552,9 @@ h1, h2, h3{
     
     .footer li{
         margin: 2rem 1rem 0 0;
+    }
+    .footer a{
+        font-family: 'JOSEFINSANS-LIGHT';
     }
     
     .social_media{
@@ -480,17 +597,8 @@ h1, h2, h3{
     .nav_list a{
         text-transform: uppercase;
         font-size: 1.6rem;
-        font-family: 'Josefin Sans';
+        font-family: "JosefinSans-Light";
         font-weight: 100;
         transition: all 0.1s ease-in-out;
         } 
-}
-
-@media screen and (min-width: 787px) {
-    .toggle img{
-        display: none;
-    }
-    .toggle{
-        display: none;
-    }
 }
